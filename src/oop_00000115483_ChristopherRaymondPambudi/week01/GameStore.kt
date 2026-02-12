@@ -8,8 +8,8 @@ fun main() {
 
     val discountPercent = if (price > 500000) 0.2 else 0.1
 
-    val totalDiscount = price * discountPercent
-    val finalPrice = price - totalDiscount
+    val totalAmount = price * discountPercent
+    val finalPrice = price - totalAmount
 
     println("=== NOTA PEMBAYARAN STEAMKW ===")
     println("Judul Game  : $gameTitle")
@@ -18,3 +18,5 @@ fun main() {
     println("Harga Akhir : Rp ${finalPrice.toInt()}")
     println("================================")
 }
+
+fun calculateDiscount(price: Int): Int = if (price > 500000) (price * 0.2).toInt() else (price * 0.1).toInt()
