@@ -4,6 +4,8 @@ class GradingSystem
 fun main() {
     val name = "Jhon Thor"
     val score = 80
+    val radius = 10.0
+    val area = 3.14 * radius * radius
 
     println("Nama: $name , Nilai: $score")
 
@@ -15,9 +17,13 @@ fun main() {
     }
     println("Grade kamu: $grade")
     println("Status: ${calculateStatus(score)}")
+
+    println("Ukuran area ($area) adalah ${checkSize(area)}")
+
     val studentId: String? = null
     val idLength = studentId?.length ?:0
     println("Panjang ID: $idLength")
 }
 
 fun calculateStatus(score: Int) = if (score > 75) "Lulus" else "Tidak Lulus"
+fun checkSize(area: Double) = if (area > 100) "Besar" else "Kecil"
