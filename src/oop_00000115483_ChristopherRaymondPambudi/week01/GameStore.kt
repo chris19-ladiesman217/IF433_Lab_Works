@@ -6,17 +6,19 @@ fun main() {
     val gameTitle = "Cyberpunk 2077"
     val price = 600000
 
-    val discountPercent = if (price > 500000) 0.2 else 0.1
 
-    val totalAmount = price * discountPercent
-    val finalPrice = price - totalAmount
+    val discountAmount = calculateDiscount(price)
+    val finalPrice = price - discountAmount
 
-    println("=== NOTA PEMBAYARAN STEAMKW ===")
-    println("Judul Game  : $gameTitle")
-    println("Harga Asli  : Rp $price")
-    println("Diskon      : ${discountPercent * 100}%")
-    println("Harga Akhir : Rp ${finalPrice.toInt()}")
-    println("================================")
+    printReceipt(title = gameTitle, finalPrice = finalPrice)
 }
 
-fun calculateDiscount(price: Int): Int = if (price > 500000) (price * 0.2).toInt() else (price * 0.1).toInt()
+fun calculateDiscount(price: Int): Int =
+    if (price > 500000) (price * 0.2).toInt() else (price * 0.1).toInt()
+
+fun printReceipt(title: String, finalPrice: Int) {
+    println("=== NOTA PEMBAYARAN STEAMKW ===")
+    println("Game        : $title")
+    println("Total Bayar : Rp $finalPrice")
+    println("================================")
+}
