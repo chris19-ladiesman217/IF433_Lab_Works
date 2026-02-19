@@ -4,7 +4,8 @@ class Student
     (
             val name: String,
             val nim: String,
-            val major: String
+            var major: String,
+            var gpa: Double = 0.0
             ){
     init {
         if (nim.length != 5) {
