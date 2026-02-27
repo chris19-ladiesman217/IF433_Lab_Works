@@ -13,4 +13,10 @@ class Main fun main() {
     myCar.openTrunk()
     myCar.honk()
     myCar.accelerate()
+
+    println("\n--- Testing Electric Car ---")
+    val myEV = ElectricCar("Tesla", 2, 90)
+    myEV.accelerate()
+    myEV.honk()
+    myEV.openTrunk()
 }
