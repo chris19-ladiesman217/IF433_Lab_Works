@@ -27,7 +27,7 @@ fun main() {
     println("Luas Persegi Panjang (5x10): ${math.hitungLuas(5, 10)}")
     println("Luas Lingkaran (r 7.0): ${math.hitungLuas(7.0)}")
 
-    println("\n=== TESTING PAYMENT SYSTEM (CHECKPOINT 10) ===")
+    println("\n=== TESTING PAYMENT SYSTEM (CHECKPOINT 10 & 11) ===")
 
     val myWallet = EWallet("Raymond", 50000.0)
     val myCard = CreditCard("Raymond", 100000.0)
@@ -36,5 +36,12 @@ fun main() {
 
     for (pembayaran in listPembayaran) {
         pembayaran.processPayment(75000.0)
+
+        if (pembayaran is EWallet && pembayaran.balance < 75000.0) {
+            println("=> Saldo kurang, mencoba top up otomatis...")
+            pembayaran.topUp(50000.0) // Smart cast memungkinkan akses ke topUp()
+            pembayaran.processPayment(75000.0)
+        }
+        println("--------------------------")
     }
 }
