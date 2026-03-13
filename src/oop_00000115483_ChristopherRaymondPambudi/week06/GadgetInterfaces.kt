@@ -1,6 +1,6 @@
 package oop_00000115483_ChristopherRaymondPambudi.week06
 
-class GadgetInterfaces interface camera {
+class GadgetInterfaces interface Camera {
     fun turnOn() { println("Lensa kamera terbuka dan sensor aktif.") }
 }
 interface Phone {
