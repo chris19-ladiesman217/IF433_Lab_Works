@@ -21,8 +21,17 @@ fun main() {
 
     println("\n=== TESTING SMART HOME SYSTEM ===")
 
-    // Instansiasi perangkat sesuai spesifikasi tugas
+
     val lampuTamu = SmartLamp("L01", "Ruang Tamu")
     val speakerDapur = SmartSpeaker("S01", "Google Nest Dapur")
     val cctvGarasi = SmartCCTV("C01", "Ezviz Garasi")
+
+    val myHub = SmartHomeHub()
+
+    myHub.addDevice(lampuTamu)
+    myHub.addDevice(speakerDapur)
+    myHub.addDevice(cctvGarasi)
+
+    myHub.activateSecurityMode()
+    myHub.turnOffAllSwitches()
 }
