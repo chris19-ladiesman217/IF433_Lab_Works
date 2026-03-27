@@ -6,9 +6,16 @@ fun main () {
         GameManager.startGame()
     println("\n--- Simulasi Factory & Enum ---")
     println("Drop chance LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
-
     val starterWeapon = Weapon.forgeStarterSword()
     println("Senjata Awal: ${starterWeapon.item.name}, Damage: ${starterWeapon.item.damage}, Durability: ${starterWeapon.durability}")
+
+    println("\n--- Simulasi Blacksmith & Battle Events ---")
+    val upgradedItem = starterWeapon.item.copy(damage = 25)
+
+    processEvent(SafeZone)
+    processEvent(MonsterEncounter("Goblin Nakal"))
+    processEvent(LootDropped(upgradedItem)) // Menggunakan item hasil upgrade
+    processEvent(GameOver("Terkena jebakan racun"))
 
     println("\n=== TEST SEALED CLASS ===")
     val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
