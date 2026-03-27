@@ -4,6 +4,11 @@ fun main () {
         println("--- Simulasi Singleton ---")
         GameManager.startGame()
         GameManager.startGame()
+    println("\n--- Simulasi Factory & Enum ---")
+    println("Drop chance LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
+
+    val starterWeapon = Weapon.forgeStarterSword()
+    println("Senjata Awal: ${starterWeapon.item.name}, Damage: ${starterWeapon.item.damage}, Durability: ${starterWeapon.durability}")
 
     println("\n=== TEST SEALED CLASS ===")
     val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
