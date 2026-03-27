@@ -1,6 +1,14 @@
 package oop_00000115483_ChristopherRaymondPambudi.week07
 
 fun main () {
+    println("\n=== TEST SEALED CLASS ===")
+    val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
+
+    val uiMessage = when(response) {
+        is ApiResponse.Success -> "Tampilkan: ${response.data}"
+        is ApiResponse.Error -> "Munculkan alert: ${response.message}"
+    }
+
     println("\n=== TEST DATA CLASS ===")
     val data1 = DataUser("Alice", 22)
     val data2 = DataUser("Alice", 22)
