@@ -1,6 +1,10 @@
 package oop_00000115483_ChristopherRaymondPambudi.week07
 
 fun main () {
+        println("--- Simulasi Singleton ---")
+        GameManager.startGame()
+        GameManager.startGame()
+
     println("\n=== TEST SEALED CLASS ===")
     val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
 
