@@ -1,5 +1,7 @@
 package oop_00000115483_ChristopherRaymondPambudi.week08
 
+import oop_00000115483_ChristopherRaymondPambudi.week08.runMockUnitTest
+
 fun main() {
     println("=== TEST SAFE CALLS & ELVIS ===")
     val emptyOrder = Order(null, null)
@@ -58,4 +60,13 @@ fun main() {
     } catch(e: IllegalArgumentException) {
         println(e.message) // Mencetak pesan custom kita, bukan crash buta
     }
+
+    println("\n=== TEST JAVA INTEROP ===")
+    val javaResponse = LegacyJavaAPI.fetchServerStatus()
+    // Kita menekan tombol !! karena KITA TAHU implementasi Java-nya aman
+    val statusLength = javaResponse!!.length
+    println("Status dari Java: $javaResponse (Length: $statusLength)")
+
+    runMockUnitTest()
+
 }
