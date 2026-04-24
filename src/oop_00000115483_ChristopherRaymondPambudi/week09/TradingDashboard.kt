@@ -27,4 +27,12 @@ fun main() {
     }
     println("=== TOP PERFORMERS (SELL) ===")
     topPerformersString.take(2).forEach { println(it) }
+
+    val uniquePairs = history.map { it.pair }.toSet()
+
+    println("\n=== ALL TRADED PAIRS ===")
+    println(uniquePairs)
+
+    println("\n=== OTHER LOGS ===")
+    worstPerformersString.forEach { println(it) }
 }
