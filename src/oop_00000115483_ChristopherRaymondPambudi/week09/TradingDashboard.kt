@@ -25,4 +25,6 @@ fun main() {
     val worstPerformersString = buyOrders.map {
         "[${it.pair}] BUY: $${it.amount * it.price}"
     }
+    println("=== TOP PERFORMERS (SELL) ===")
+    topPerformersString.take(2).forEach { println(it) }
 }
