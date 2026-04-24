@@ -19,4 +19,7 @@ fun main() {
     val sellOrders = closedTrades.filter { it.type == "SELL" }
 
     val sellValues = sellOrders.map { it.amount * it.price }
+    val topPerformersString = sellOrders.map {
+        "[${it.pair}] PROFIT: $${it.amount * it.price}"
+    }
 }
