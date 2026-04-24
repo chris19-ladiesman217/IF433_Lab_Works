@@ -10,4 +10,6 @@ fun main() {
         TradeTransaction("ETH/USDT", 0.5, 3200.0, "SELL", "CLOSED"),
         TradeTransaction("BNB/USDT", 2.0, 500.0, "BUY", "CLOSED")
     )
+    val mutableHistory = history.toMutableList()
+    mutableHistory.add(TradeTransaction("ADA/USDT", 100.0, 0.5, "BUY", "OPEN"))
 }
