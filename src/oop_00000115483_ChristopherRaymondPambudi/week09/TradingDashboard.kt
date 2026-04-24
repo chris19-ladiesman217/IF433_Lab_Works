@@ -17,4 +17,6 @@ fun main() {
 
     val buyOrders = closedTrades.filter { it.type == "BUY" }
     val sellOrders = closedTrades.filter { it.type == "SELL" }
+
+    val sellValues = sellOrders.map { it.amount * it.price }
 }
