@@ -14,4 +14,7 @@ fun main() {
     mutableHistory.add(TradeTransaction("ADA/USDT", 100.0, 0.5, "BUY", "OPEN"))
 
     val closedTrades = history.filter { it.status == "CLOSED" }
+
+    val buyOrders = closedTrades.filter { it.type == "BUY" }
+    val sellOrders = closedTrades.filter { it.type == "SELL" }
 }
