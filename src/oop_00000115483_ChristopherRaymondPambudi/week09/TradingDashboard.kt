@@ -22,4 +22,7 @@ fun main() {
     val topPerformersString = sellOrders.map {
         "[${it.pair}] PROFIT: $${it.amount * it.price}"
     }
+    val worstPerformersString = buyOrders.map {
+        "[${it.pair}] BUY: $${it.amount * it.price}"
+    }
 }
