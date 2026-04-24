@@ -35,4 +35,8 @@ fun main() {
 
     println("\n=== OTHER LOGS ===")
     worstPerformersString.forEach { println(it) }
+
+    val totalVolume = sellValues.sum()
+    println("\nTotal Closed Volume: $${totalVolume}")
+    println("--- Trading Dashboard Pipeline Complete ---")
 }
