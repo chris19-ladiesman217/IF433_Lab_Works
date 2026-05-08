@@ -28,4 +28,8 @@ fun main() {
         println("\n=== HASIL PENCARIAN ===")
         println(it.diagnose())
     }
+    with(homeDevices) {
+        println("\n=== SMART HOME SUMMARY ===")
+        println("Total Perangkat Terdaftar: ${this.size}")
+    }
 }
