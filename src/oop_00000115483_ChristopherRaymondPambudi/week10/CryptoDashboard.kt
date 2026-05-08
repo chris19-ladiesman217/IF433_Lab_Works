@@ -21,4 +21,6 @@ fun main() {
 
     println("\n=== RECENT TRANSACTIONS ===")
     txRepo.getAll().forEach { println("ID: ${it.id} | Amount: ${it.amount}") }
+
+    println("\n--- All Generic Systems Verified ---")
 }
