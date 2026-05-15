@@ -56,4 +56,13 @@ fun main() {
         currentKibbleStock = newStock
         println("Makan sore sukses! Sisa stok kibble: $currentKibbleStock gr")
     }
+
+        .onFailure { error ->
+            // Jika terjadi error, tampilkan pesan peringatan
+            println("Peringatan ke Pemilik: ${error.message}")
+
+            // Logika tambahan sebagai fallback (cadangan)
+            println("(Opsional: Berikan chicken jerky secara manual)")
+        }
+
 }
