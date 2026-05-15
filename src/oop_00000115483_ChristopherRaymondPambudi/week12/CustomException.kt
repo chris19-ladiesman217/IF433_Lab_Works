@@ -1,7 +1,5 @@
 package oop_00000115483_ChristopherRaymondPambudi.week12
 
-import sun.jvm.hotspot.HelloWorld.e
-
 class InsufficientFundsException(
     val amount: Double,
     val balance: Double

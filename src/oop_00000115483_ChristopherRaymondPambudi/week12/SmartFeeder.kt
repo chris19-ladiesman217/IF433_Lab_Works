@@ -64,5 +64,5 @@ fun main() {
             // Logika tambahan sebagai fallback (cadangan)
             println("(Opsional: Berikan chicken jerky secara manual)")
         }
-
+    println("\n--- Smart Feeder Robustness Verified ---")
 }
