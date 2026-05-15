@@ -28,4 +28,18 @@ fun dispenseKibble(
 fun main() {
     var currentKibbleStock = 50
     println("Stok awal kibble: $currentKibbleStock gr")
+
+    println("=== JADWAL MAKAN PAGI ===")
+    try {
+        currentKibbleStock = dispenseKibble(80, currentKibbleStock, false)
+    }
+    catch (e: DispenserJamException) {
+        println("Caught: ${e.message}")
+    }
+    catch (e: FoodEmptyException) {
+        println("Caught: ${e.message}")
+    }
+    catch (e: Exception) {
+        println("Caught General Error: ${e.message}")
+    }
 }
