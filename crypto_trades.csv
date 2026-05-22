@@ -1,0 +1,4 @@
+1, BTCUSDT, Long, 50.0, 15.5
+2, ETHUSDT, Short, 30.0, -5.2
+3, SOLUSDT, Long, 25.0, 8.0
+CORRUPT_ID, DOGEUSDT, Hold, XX, YY
