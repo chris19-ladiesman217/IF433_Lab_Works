@@ -1,7 +1,7 @@
 package oop_00000115483_ChristopherRaymondPambudi.week12
 
 fun main() {
-    println("=== TEST RUNCATCHING ===")
+    println("=== TEST RUN CATCHING ===")
     val result: Result<Int> = runCatching {
         "42X".toInt()
     }
