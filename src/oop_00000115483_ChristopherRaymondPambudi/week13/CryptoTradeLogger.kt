@@ -52,5 +52,7 @@ fun main() { //
         TradeRecord(3, "SOLUSDT", "Long", 25.0, 8.0)
     )
 
-    saveTrades(mockTrades, "crypto_trades.csv") //
+    saveTrades(mockTrades, "crypto_trades.csv")
+
+    File("crypto_trades.csv").appendText("CORRUPT_ID, DOGEUSDT, Hold, XX, YY\n")
 }
