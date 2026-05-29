@@ -54,3 +54,38 @@ class SafeOrderProcessor(
         notifier.sendNotification("Pesanan $itemName Anda telah dikonfirmasi!")
     }
 }
+
+
+interface PricingStrategy {
+    fun calculate(price: Double): Double
+}
+
+class RegularPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price
+}
+
+class VipPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price * 0.90
+}
+
+class FinalSafeOrderProcessor(
+    private val repo: OrderRepository,
+    private val notifier: NotificationService
+) {
+    fun processOrder(itemName: String, basePrice: Double, strategy: PricingStrategy, customerLabel: String) {
+        val finalPrice = strategy.calculate(basePrice)
+        println("Memproses pesanan $itemName seharga $finalPrice")
+        repo.saveOrder(itemName, finalPrice, customerLabel)
+        notifier.sendNotification("Pesanan $itemName Anda telah dikonfirmasi!")
+    }
+}
+
+fun main() {
+    val repo = CsvOrderRepository()
+    val notifier = EmailNotifier()
+    val processor = FinalSafeOrderProcessor(repo, notifier)
+
+    // Test Customer Regular & VIP tanpa crash atau merusak dependensi internal
+    processor.processOrder("Laptop ASUS", 10000000.0, RegularPricing(), "REGULAR")
+    processor.processOrder("Smartphone Samsung", 5000000.0, VipPricing(), "VIP")
+}
